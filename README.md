@@ -98,9 +98,23 @@ endmodule
 
 ### OUTPUT
 
+
+
+
+
+
+
 ### RTL LOGIC 
 ![](multi.png)
 ![](demux.jpg)
+
+
+
+
+
+
+
+
 
 
 
@@ -119,10 +133,28 @@ endmodule
 
 
 
+
+
+
+
+
+
 ### TRUTH TABLE 
 ![](mtt.jpg)
 
 ![](dmtt.jpg)
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
