@@ -1,7 +1,11 @@
 # Exercise-07-Multiplexer-and-De-multiplexer
-### AIM: To implement 4 X1 multiplexer and 1X4 de multiplexer using verilog and validate its outputs
-### HARDWARE REQUIRED:  – PC, Cyclone II , USB flasher
-### SOFTWARE REQUIRED:   Quartus prime
+### AIM: 
+To implement 4 X1 multiplexer and 1X4 de multiplexer using verilog and validate its outputs
+### HARDWARE REQUIRED:  – 
+PC, Cyclone II , USB flasher
+### SOFTWARE REQUIRED:   
+Quartus prime
+
 ### THEORY 
 
 ## What are Multiplexer and Demultiplexer?
@@ -28,7 +32,9 @@ If the control input is changed to 11, then all gates are restricted except the 
 
 ## What is Demultiplexer?
 De-multiplexer is also a device with one input and multiple output lines. It is used to send a signal to one of the many devices. The main difference between a multiplexer and a de-multiplexer is that a multiplexer takes two or more signals and encodes them on a wire, whereas a de-multiplexer does reverse to what the multiplexer does.
+
 ![image](https://user-images.githubusercontent.com/36288975/170912606-a30e4b74-1726-4430-b245-2c3c3d9c232d.png)
+
 Figure 3 De-multiplexer 
 1-4 Demultiplexer
 The 1-to-4 demultiplexer comprises 1- input bit, 4-output bits, and control bits. The 1X4 demultiplexer circuit diagram is shown below.![image](https://user-images.githubusercontent.com/36288975/170912683-00fb746a-1d45-4023-91d1-3a70b841073c.png)
@@ -47,23 +53,55 @@ If the control input changes to AB = 10, then all the gates are restricted excep
  
  
 ### Procedure
-/* write all the steps invloved */
-
+Multiplexer refers to a type of combinational circuit that accepts multiple inputs of data but provides only a single output. The demultiplexer refers to the type of combinational circuit that accepts just a single input but directs it through multiple outputs. A Multiplexer performs conversion from parallel to serial.
 
 
 ### PROGRAM 
-/*
-Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+Program for multiplexer and De-multiplexer  and verify its truth table in quartus using Verilog programming.
+
+Developed by: R.Karthikeyan
+
+RegisterNumber: 22002525 
+
+```
+module multiplexer(i0,i1,i2,i3,S0,S1,Y);
+input i0,i1,i2,i3,S0,S1;
+output Y;
+not(S0C,S0);
+nor(S1C,S1);
+wire p,q,r,s,S0C,S1C;
+and(p,S0C,S1C,i0);
+and(q,S0C,S1,i1);
+and(r,S0,S1C,i2);
+and(s,S0,S1,i0);
+or(Y,p,r,s,s);
+endmodule
+
+```
+```
+module (i,s0,s1,y0,y1,y2,y3)
+input(i,s0,s1)
+output(y0,y1,y2,y3)
+wire(s0c,s1c)
+not(s0c,s0)
+not(s1c,s1)
+and(y0,i,s0,s0c)
+and(y1,i,s0,s1)
+and(y2,i,s1,s0c)
+and(y3,i,s1,s1c)
+endmodule
+```
 
 
 
 
+### OUTPUT
 
+### RTL LOGIC 
+![](multi.png)
+![](demux.jpg)
 
-### RTL LOGIC  
 
 
 
@@ -73,16 +111,22 @@ RegisterNumber:
 
 
 ### TIMING DIGRAMS  
+![](mt.jpg)
 
+
+![](dmtt.jpg)
 
 
 
 
 ### TRUTH TABLE 
+![](mtt.jpg)
 
+![](dmtt.jpg)
 
 
 
 
 
 ### RESULTS 
+Thus,the multiplexer and De-multiplexer are verified using VHDL code.
